@@ -28,19 +28,51 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Initialize the shift register to a known state (e.g., all zeros).
+
+2.Input a bit serially into the shift register.
+
+3.Shift the contents of the register one position to the right (or left).
+
+4.Output the shifted bit from the last stage of the register.
+
+5.Repeat steps 2-4 for each bit you want to input and shift.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:
-*/
+Developed by : Magesh C M
 
+RegisterNumber : 212223220053
+```
+module ex11(out,clk,rstn);
+input clk,rstn;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+if(!rstn)
+out<=0;
+else 
+out <= out+1;
+end
+endmodule
+```
 **RTL LOGIC UP COUNTER**
+
+![image](https://github.com/MageshCM/SYNCHRONOUS-UP-COUNTER/assets/164765537/cfdcc98a-5ccb-4a60-8fb9-b797902a4f20)
+
 
 **TIMING DIAGRAM FOR IP COUNTER**
 
+![image](https://github.com/MageshCM/SYNCHRONOUS-UP-COUNTER/assets/164765537/a8fb3e41-7537-4b17-bd3d-91131f595c91)
+
+
 **TRUTH TABLE**
 
+![image](https://github.com/MageshCM/SYNCHRONOUS-UP-COUNTER/assets/164765537/80700c7c-2333-48c0-90f3-4bbf2819b6fe)
+
 **RESULTS**
+
+Hence a 4 bit synchronous up counter is implemented correctly.
